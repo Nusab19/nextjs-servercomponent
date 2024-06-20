@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+In my next.js 14 project, I need to pass a **state** from a child component to the parent component.
 
-## Getting Started
+Currently, I declared the state in the parent component and pass it to children. _( thus making everything under it client component )_
 
-First, run the development server:
+But I want to keep things server component when possible. Here's a minimal reproducible example of what I'm trying to do:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Code: https://github.com/Nusab19/nextjs-servercomponent
+- Live Demo: https://nusab19.github.io/nextjs-servercomponent/
+
+The state I have is **isFocused**. The navbar has a button to toggle it. When it's enabled. The whole website is just,
+
+```
+<Navbar/>
+<FocusedPage />
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If not enabled,
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+<Navbar/>
+<Hero />
+<FocusedPage />
+...
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Now whether to render the `<Hero />` component or not, I need to know if `isFocused` is `true` or `false`.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+So, I'm keeping it under the client parent component. Thus, `<Hero />` also becomes a client side component.
