@@ -1,15 +1,12 @@
-import React from "react";
-
 const Hero = () => {
   return (
     <div className="bg-blue-200 px-20 py-20">
       <header className="text-4xl font-bold">Welcome to the Hero page!</header>
       <p className="mt-5 font-semibold">
-        This is a simple Next.js app for the MRE of{" "}
+        This is a simple Next.js app for the MRE for{" "}
         <a href="#" className="text-rose-500 underline underline-offset-2">
           this
-        </a>{" "}
-        example.
+        </a>
         <br />
         <br />
         Author:{" "}
