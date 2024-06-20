@@ -1,13 +1,13 @@
 In my next.js 14 project, I need to pass a **state** from a child component to the parent component.
 
-Currently, I declared the state in the parent component and pass it to children. _( thus making everything under it client component )_
+Currently, I declared the state in the parent component and passed it to children. _( thus making everything under the parent component client side)_
 
 But I want to keep things server component when possible. Here's a minimal reproducible example of what I'm trying to do:
 
-- Code: https://github.com/Nusab19/nextjs-servercomponent
-- Live Demo: https://nusab19.github.io/nextjs-servercomponent/
+- Code: [Github](https://github.com/Nusab19/nextjs-servercomponent/blob/main/src/components/Home.tsx)
+- Live Demo: [Here](https://nusab19.github.io/nextjs-servercomponent/)
 
-The state I have is **isFocused**. The navbar has a button to toggle it. When it's enabled. The whole website is just,
+The state I have is `isFocused`. The navbar has a button to toggle it. When it's enabled. The whole website is just,
 
 ```
 <Navbar/>
