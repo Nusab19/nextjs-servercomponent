@@ -9,14 +9,14 @@ But I want to keep things server component when possible. Here's a minimal repro
 
 The state I have is `isFocused`. The navbar has a button to toggle it. When it's enabled. The whole website is just,
 
-```
+```jsx
 <Navbar/>
 <FocusedPage />
 ```
 
 If not enabled,
 
-```
+```jsx
 <Navbar/>
 <Hero />
 <FocusedPage />
