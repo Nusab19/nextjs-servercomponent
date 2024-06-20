@@ -6,19 +6,13 @@ import Hero from "./Hero";
 import Focused from "@/components/Focused";
 
 const Home = () => {
-  const [isFocused, setIsFocused] = useState(false);
+  const [focusMode, setFocusMode] = useState(false);
 
   return (
     <main className="text-center">
-      <Navbar setIsFocused={setIsFocused} />
-      {isFocused ? (
-        <Focused isFocused={isFocused} />
-      ) : (
-        <>
-          <Hero />
-          <Focused isFocused={isFocused} />
-        </>
-      )}
+      <Navbar setFocusMode={setFocusMode} />
+      {!focusMode && <Hero />}
+      <Focused focusMode={focusMode} />
     </main>
   );
 };
